@@ -1,3 +1,4 @@
 model/__pycache__
 model/*.json
 model/*.pt
+model/*.txt
