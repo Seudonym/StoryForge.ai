@@ -12,7 +12,7 @@ function App() {
   const [text, setText] = useState("");
 
   return (
-    <main className="h-screen bg-black py-8">
+    <main className="bg-black py-8 h-screen">
       <section className="flex flex-col justify-evenly items-center">
         <h1 className="text-white w-auto text-5xl merriweather-light">
           StoryForge.ai
