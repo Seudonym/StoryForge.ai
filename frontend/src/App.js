@@ -19,8 +19,6 @@ function App() {
           <Cursor />
         </h1>
 
-        {/* <Content /> */}
-
         {change === false ? (
           <Question
             text={text}
