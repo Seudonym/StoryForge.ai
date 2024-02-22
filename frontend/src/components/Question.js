@@ -8,8 +8,6 @@ export default function Question(props) {
   const [index, setIndex] = useState(0);
   const [button, setButton] = useState("Start");
   const [inputVisible, setInputVisible] = useState(false); // Track input visibility
-  
-  
 
   const questionarray = [
     "What is your genre?",
@@ -30,9 +28,6 @@ export default function Question(props) {
     setIndex(index + 1);
     setButton("Next");
     props.setText("");
-   
-    
-    
 
     if (index > questionarray.length - 1) {
       setQuestion("Done");
@@ -41,14 +36,18 @@ export default function Question(props) {
         props.setChange(true);
       }
     }
-   
   }
 
   return (
     <main className="mt-6 w-5/6 rounded-md m-auto h-64 text-emerald-200 text-center text-xl merriweather-regular">
       <div className="w-full mt-16 text-3xl">{question}</div>
       <div className="w-full">
-        <AnswerBox text= {props.text} setText= {props.setText} customStyles={`${inputVisible ? "" : "hidden"}`} />
+        <AnswerBox
+          text={props.text}
+          setText={props.setText}
+          inputVisible={inputVisible}
+        />
+        {/* <AnswerBox text= {props.text} setText= {props.setText} customStyles={`${inputVisible ? "" : "hidden"}`} /> */}
 
         {/* <CenteredImage
           imageUrl="https://rocketexpansion.com/wp-content/uploads/2021/04/about-the-author-v2.jpg"
