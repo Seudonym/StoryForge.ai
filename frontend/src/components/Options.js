@@ -11,7 +11,7 @@ export default function Options(props) {
         <Button />
         <Button />
       </div>
-      <InputBox text = {props.text} setText = {props.setText} />
+      <InputBox text={props.text} setText={props.setText} />
     </>
   );
 }

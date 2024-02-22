@@ -9,8 +9,8 @@ import Prompt from "./components/Prompt";
 
 function App() {
   const [change, setChange] = useState(false);
-  const[text,setText] = useState("");
- 
+  const [text, setText] = useState("");
+
   return (
     <main className="h-screen bg-black py-8">
       <section className="flex flex-col justify-evenly items-center">
@@ -22,15 +22,19 @@ function App() {
         {/* <Content /> */}
 
         {change === false ? (
-          <Question  text= {text} setText= {setText} change={change} setChange={setChange} />
+          <Question
+            text={text}
+            setText={setText}
+            change={change}
+            setChange={setChange}
+          />
         ) : (
           <>
-      <Prompt />
-      <div className="">
-        <Options text = {text} setText = {setText}  />
-       
-      </div>
-    </>
+            <Prompt />
+            <div className="">
+              <Options text={text} setText={setText} />
+            </div>
+          </>
         )}
       </section>
     </main>
