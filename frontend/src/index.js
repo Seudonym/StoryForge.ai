@@ -8,14 +8,25 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Landing from './landing';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <App/>
+      <Landing/>
     ),
+    
+
+    
   },
+  {
+    path:"ai",
+    element:(
+      <App/>
+    )
+  },
+  
  
 ]);
 

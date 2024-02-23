@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {},
+      backgroundImage: {
+        'cover': "url('/public/assets/cover.jpg')",
+      },
     },
   },
   plugins: [],

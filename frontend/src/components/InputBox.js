@@ -4,6 +4,9 @@ export default function InputBox(props) {
   const handleInputChange = (e) => {
     props.setText(e.target.value);
   };
+  const handlePromptSubmit = ()=>{
+    props.setText(" ");
+  }
 
   return (
     <>
@@ -17,8 +20,8 @@ export default function InputBox(props) {
           value={props.text}
           onChange={handleInputChange}
         />
-        <button className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600">
-          <img src="/assets/write_icon.svg" alt="Send" />
+        <button className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600" onClick = {handlePromptSubmit}>
+          <img src="/assets/write_icon.svg" alt="Send"  />
         </button>
       </div>
     </>
