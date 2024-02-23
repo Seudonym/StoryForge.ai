@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {},
+      backgroundImage: {
+        mountain: "assets/background.jpg",
+      },
     },
   },
   plugins: [],
