@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="bg-black py-8 h-screen">
       <section className="flex flex-col justify-evenly items-center">
-        <h1 className="text-white w-auto text-5xl merriweather-light">
+        <h1 className="text-white w-auto text-5xl merriweather-light m-0">
           StoryForge.ai
           <Cursor />
         </h1>

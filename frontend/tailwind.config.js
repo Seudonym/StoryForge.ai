@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {},
       backgroundImage: {
-        'cover': "url('/public/assets/cover.jpg')",
+        mountain: "assets/background.jpg",
       },
     },
   },
