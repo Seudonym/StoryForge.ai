@@ -8,18 +8,26 @@ module.exports = {
         mountain: "assets/background.jpg",
       },
       animation: {
-        typewriter: 'typewriter 3.5s  infinite',
+        typewriter: "typewriter 3.5s infinite",
+        blink: "blink 1.0s infinite",
       },
-      keyframes:{
-        typewriter:{
-          '0%':{width:'0%'},
-          '100%':{width:'100%'},
+      keyframes: {
+        typewriter: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
-        blink:{
-          '0%,100%':{borderColor:'black'},
-          '50%':{borderColor:'white'},
+        blink: {
+          "0%,100%": { borderColor: "black" },
+          "50%": { borderColor: "white" },
         },
-      }
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
     },
     colors: {
       "primary-dark": "#131314",
