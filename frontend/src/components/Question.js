@@ -1,15 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import CenteredImage from "./Cover";
+
 import AnswerBox from "./AnswerBox";
 
 export default function Question(props) {
   const [question, setQuestion] = useState(" ");
   const [index, setIndex] = useState(0);
-  const [button, setButton] = useState("Start");
+  const [button, setButton] = useState("Start Forging Your Story");
   const [inputVisible, setInputVisible] = useState(false); // Track input visibility
-  
-  
 
   const questionarray = [
     "What is your genre?",
@@ -30,9 +28,6 @@ export default function Question(props) {
     setIndex(index + 1);
     setButton("Next");
     props.setText("");
-   
-    
-    
 
     if (index > questionarray.length - 1) {
       setQuestion("Done");
@@ -41,22 +36,22 @@ export default function Question(props) {
         props.setChange(true);
       }
     }
-   
   }
 
   return (
-    <main className="mt-6 w-5/6 rounded-md m-auto h-64 text-emerald-200 text-center text-xl merriweather-regular">
+    <main className="w-5/6 rounded-md m-auto h-64 text-emerald-200 text-center text-xl merriweather-regular">
       <div className="w-full mt-16 text-3xl">{question}</div>
       <div className="w-full">
-        <AnswerBox text= {props.text} setText= {props.setText} customStyles={`${inputVisible ? "" : "hidden"}`} />
+        <AnswerBox
+          text={props.text}
+          setText={props.setText}
+          inputVisible={inputVisible}
+        />
 
-        {/* <CenteredImage
-          imageUrl="https://rocketexpansion.com/wp-content/uploads/2021/04/about-the-author-v2.jpg"
-          alt="Description of the image"
-        /> */}
+       
 
         <button
-          className="border-2 border-white rounded-md bg-inherit py-2 px-4 mt-8 mb-4 mx-4 text-white"
+          className="border-2 border-white rounded-md bg-inherit py-2 px-4 mt-8 mb-4 mx-4 text-white hover:bg-white hover:text-black hover:font-bold"
           onClick={handleQuestionSubmit}
         >
           {button}

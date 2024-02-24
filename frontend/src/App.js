@@ -9,28 +9,30 @@ import Prompt from "./components/Prompt";
 
 function App() {
   const [change, setChange] = useState(false);
-  const[text,setText] = useState("");
- 
+  const [text, setText] = useState("");
+
   return (
-    <main className="h-screen bg-black py-8">
+    <main className="bg-black py-8 h-screen">
       <section className="flex flex-col justify-evenly items-center">
-        <h1 className="text-white w-auto text-5xl merriweather-light">
+        <h1 className="text-white w-auto text-5xl merriweather-light m-0">
           StoryForge.ai
           <Cursor />
         </h1>
 
-        {/* <Content /> */}
-
         {change === false ? (
-          <Question  text= {text} setText= {setText} change={change} setChange={setChange} />
+          <Question
+            text={text}
+            setText={setText}
+            change={change}
+            setChange={setChange}
+          />
         ) : (
           <>
-      <Prompt />
-      <div className="">
-        <Options text = {text} setText = {setText}  />
-       
-      </div>
-    </>
+            <Prompt />
+            <div className="">
+              <Options text={text} setText={setText} />
+            </div>
+          </>
         )}
       </section>
     </main>

@@ -4,7 +4,7 @@ import Options from "./Options";
 export default function Prompt() {
   return (
     <>
-      <main className="mt-6 w-5/6 rounded-md m-auto h-64 text-emerald-200 text-lg leading-8 overflow-y-scroll hide-scroll ">
+      <main className="mt-6 w-5/6 rounded-md m-auto h-72 text-emerald-200 text-lg leading-8 overflow-y-scroll hide-scroll ">
         {/* This is a sample prompt. */}
         As the sun dipped below the horizon, casting long shadows across the
         quaint village of Willowbrook, a sense of unease settled over its
