@@ -37,6 +37,12 @@ export default function Question(props) {
   return (
     <section className="h-screen m-auto flex justify-center items-center bg-primary-dark text-white">
       <div className="flex flex-col items-center">
+        {visible === false ? (
+          <img className="width-256" src="assets/sandcastle.png" />
+        ) : (
+          <></>
+        )}
+
         <div className="my-4 text-3xl">{question}</div>
         <div className="my-4">
           <AnswerBox

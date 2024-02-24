@@ -30,7 +30,7 @@ export default function InputBox(props) {
           className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600"
           onClick={handlePromptSubmit}
         >
-          <img className="width-32" src="/assets/pic2.svg" alt="Send" />
+          <img className="width-32" src="/assets/pic.svg" alt="Send" />
         </button>
       </div>
     </>
