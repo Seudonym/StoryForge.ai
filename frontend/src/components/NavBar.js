@@ -5,12 +5,14 @@ export default function NavBar() {
   return (
     <nav className="fixed top-0 flex w-full px-4 py-2 justify-content-between bg-primary-medium drop-shadow-xl">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <button className="text-xl text-white">
-        <Link to = "/">StoryForge.ai</Link>
-         </button>
+        <button className="text-xl text-white flex flex-row">
+          <img className="width-32 mx-4" src="/assets/favicon.png" alt="Send" />
+
+          <Link to="/">StoryForge.ai</Link>
+        </button>
         <ul className="flex items-center">
           <button className="p-4 text-white text-md hover:underline decoration-solid">
-          <Link to = "/ai">Infinite Stories, One Tap Away!</Link>
+            <Link to="/ai">Infinite Stories, One Tap Away!</Link>
           </button>
           {/* <li className="p-4 text-white text-md hover:underline decoration-solid">
             Product
