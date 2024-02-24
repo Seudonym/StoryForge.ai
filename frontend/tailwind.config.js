@@ -7,6 +7,19 @@ module.exports = {
       backgroundImage: {
         mountain: "assets/background.jpg",
       },
+      animation: {
+        typewriter: 'typewriter 3.5s  infinite',
+      },
+      keyframes:{
+        typewriter:{
+          '0%':{width:'0%'},
+          '100%':{width:'100%'},
+        },
+        blink:{
+          '0%,100%':{borderColor:'black'},
+          '50%':{borderColor:'white'},
+        },
+      }
     },
     colors: {
       "primary-dark": "#131314",
