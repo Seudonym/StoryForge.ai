@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 /* Styles */
-
 import "tailwindcss/tailwind.css";
 
 /* Components */
@@ -14,7 +13,9 @@ function Landing() {
       <NavBar />
       <section className="h-screen flex flex-row justify-center items-center bg-primary-dark">
         <div className="border-r-2 py-4 px-8 border-white h-fit">
-          <h1 className="text-white animate-typewriter overflow-x-hidden h-16 text-center  w-fit text-5xl flex items-center  p-2">StoryForge.ai</h1>
+          <h1 className="text-white animate-typewriter overflow-x-hidden h-16 text-center  w-fit text-5xl flex items-center  p-2">
+            StoryForge.ai
+          </h1>
         </div>
         <div className="pl-8"></div>
         <Link to="/ai">

@@ -20,12 +20,18 @@ export default function InputBox(props) {
           value={props.text}
           onChange={handleInputChange}
         />
-        {/* <button
+        <button
           className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600"
           onClick={handlePromptSubmit}
         >
-          <img src="/assets/write_icon.svg" alt="Send" />
-        </button> */}
+          <img className="width-28" src="/assets/pen.svg" alt="Send" />
+        </button>
+        <button
+          className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600"
+          onClick={handlePromptSubmit}
+        >
+          <img className="width-32" src="/assets/pic2.svg" alt="Send" />
+        </button>
       </div>
     </>
   );
