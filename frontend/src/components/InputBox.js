@@ -16,7 +16,7 @@ export default function InputBox(props) {
           name=""
           id=""
           placeholder="Enter custom prompt"
-          className="w-full px-8 bg-primary-medium focus:outline-none text-white"
+          className="w-5/6 bg-primary-medium focus:outline-none text-white"
           value={props.text}
           onChange={handleInputChange}
         />

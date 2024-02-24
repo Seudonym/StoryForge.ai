@@ -14,23 +14,21 @@ function App() {
   return (
     <main className="h-screen bg-primary-dark">
       <NavBar />
-      <section className="flex flex-col mt-8 justify-evenly items-center">
-        {change === false ? (
-          <Question
-            text={text}
-            setText={setText}
-            change={change}
-            setChange={setChange}
-          />
-        ) : (
-          <>
-            <Prompt />
-            <div className="">
-              <Options text={text} setText={setText} />
-            </div>
-          </>
-        )}
-      </section>
+      {change === false ? (
+        <Question
+          text={text}
+          setText={setText}
+          change={change}
+          setChange={setChange}
+        />
+      ) : (
+        <>
+          <Prompt />
+          {/* <div> */}
+          <Options text={text} setText={setText} />
+          {/* </div> */}
+        </>
+      )}
     </main>
   );
 }
