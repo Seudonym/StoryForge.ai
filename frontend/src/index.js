@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./pages/app";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -8,6 +7,9 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+
+/* Pages */
+import App from "./pages/app";
 import Landing from "./pages/landing";
 
 const router = createBrowserRouter([

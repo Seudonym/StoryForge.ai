@@ -6,7 +6,7 @@ import AnswerBox from "./AnswerBox";
 export default function Question(props) {
   const [question, setQuestion] = useState(" ");
   const [index, setIndex] = useState(0);
-  const [button, setButton] = useState("Start Forging Your Story");
+  const [button, setButton] = useState("Start a new story");
   const [inputVisible, setInputVisible] = useState(false); // Track input visibility
 
   const questionarray = [
@@ -39,7 +39,7 @@ export default function Question(props) {
   }
 
   return (
-    <main className="w-5/6 rounded-md m-auto h-64 text-emerald-200 text-center text-xl merriweather-regular">
+    <main className="w-5/6 rounded-lg m-auto h-64 text-emerald-200 text-center text-xl text-white">
       <div className="w-full mt-16 text-3xl">{question}</div>
       <div className="w-full">
         <AnswerBox
@@ -48,10 +48,8 @@ export default function Question(props) {
           inputVisible={inputVisible}
         />
 
-       
-
         <button
-          className="border-2 border-white rounded-md bg-inherit py-2 px-4 mt-8 mb-4 mx-4 text-white hover:bg-white hover:text-black hover:font-bold"
+          className="border-2 border-white rounded-md bg-inherit px-8 py-4 mt-8 mb-4 mx-4 text-white hover:bg-white hover:text-black"
           onClick={handleQuestionSubmit}
         >
           {button}
