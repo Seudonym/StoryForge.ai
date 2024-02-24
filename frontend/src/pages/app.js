@@ -24,9 +24,7 @@ function App() {
       ) : (
         <>
           <Prompt />
-          {/* <div> */}
           <Options text={text} setText={setText} />
-          {/* </div> */}
         </>
       )}
     </main>

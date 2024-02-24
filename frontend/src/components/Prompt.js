@@ -3,7 +3,7 @@ import Options from "./Options";
 
 export default function Prompt() {
   return (
-    <div className="w-5/6 h-screen m-auto p-32 justify-evenly items-center leading-8 overflow-y-scroll hide-scroll bg-primary-dark text-white">
+    <section className="w-5/6 h-screen m-auto p-32 justify-evenly items-center leading-8 overflow-y-scroll hide-scroll bg-primary-dark text-white">
       {/* This is a sample prompt. */}
       <p>
         "As the sun dipped below the horizon, casting long shadows across the
@@ -45,6 +45,6 @@ export default function Prompt() {
         skin, Elara would discover that her destiny was far grander—and far more
         perilous—than she could have ever imagined.
       </p>
-    </div>
+    </section>
   );
 }

@@ -39,7 +39,7 @@ export default function Question(props) {
   }
 
   return (
-    <main className="w-5/6 rounded-lg m-auto h-64 text-emerald-200 text-center text-xl text-white">
+    <section className="w-5/6 h-screen m-auto p-32 justify-evenly items-center leading-8 overflow-y-scroll hide-scroll bg-primary-dark text-white">
       <div className="w-full mt-16 text-3xl">{question}</div>
       <div className="w-full">
         <AnswerBox
@@ -55,6 +55,6 @@ export default function Question(props) {
           {button}
         </button>
       </div>
-    </main>
+    </section>
   );
 }
