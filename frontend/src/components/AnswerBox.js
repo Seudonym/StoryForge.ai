@@ -15,7 +15,7 @@ export default function AnswerBox(props) {
         name=""
         id=""
         placeholder="Enter Answer"
-        className={`w-5/6 bg-primary-medium focus:outline-none text-white`}
+        className={`w-5/6 bg-primary-medium focus:outline-none text-white text-center`}
         value={props.text}
         onChange={handleInputChange}
       />
