@@ -12,8 +12,7 @@ function Landing() {
   return (
     <main className="h-screen bg-primary-dark">
       <NavBar />
-
-      <section className="h-screen flex flex-row justify-center items-center">
+      <section className="h-screen flex flex-row justify-center items-center bg-primary-dark">
         <div className="border-r-2 py-4 px-8 border-white">
           <h1 className="text-white w-auto text-5xl">StoryForge.ai</h1>
         </div>

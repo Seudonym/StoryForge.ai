@@ -39,21 +39,25 @@ export default function Question(props) {
   }
 
   return (
-    <section className="w-5/6 h-screen m-auto p-32 justify-evenly items-center leading-8 overflow-y-scroll hide-scroll bg-primary-dark text-white">
-      <div className="w-full mt-16 text-3xl">{question}</div>
-      <div className="w-full">
-        <AnswerBox
-          text={props.text}
-          setText={props.setText}
-          inputVisible={inputVisible}
-        />
+    <section className="w-5/6 h-screen m-auto flex justify-center items-center bg-primary-dark text-white">
+      <div className="">
+        <div className="my-4 text-3xl">{question}</div>
+        <div className="my-4">
+          <AnswerBox
+            text={props.text}
+            setText={props.setText}
+            inputVisible={inputVisible}
+          />
+        </div>
 
-        <button
-          className="border-2 border-white rounded-md bg-inherit px-8 py-4 mt-8 mb-4 mx-4 text-white hover:bg-white hover:text-black"
-          onClick={handleQuestionSubmit}
-        >
-          {button}
-        </button>
+        <div>
+          <button
+            className="w-full my-4 border-2 border-white rounded-md px-16 py-2 text-white hover:bg-white hover:text-black"
+            onClick={handleQuestionSubmit}
+          >
+            {button}
+          </button>
+        </div>
       </div>
     </section>
   );

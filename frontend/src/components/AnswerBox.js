@@ -10,9 +10,7 @@ export default function AnswerBox(props) {
       name=""
       id=""
       placeholder="Enter Answer"
-      className={`text-center text-black rounded-md w-2/6 p-2 my-8 ${
-        props.inputVisible ? "" : "hidden"
-      }`}
+      className={`w-full ${props.inputVisible ? "" : "hidden"}`}
       value={props.text}
       onChange={handleInputChange}
     />
