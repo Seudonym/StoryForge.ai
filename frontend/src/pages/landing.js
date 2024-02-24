@@ -18,7 +18,7 @@ function Landing() {
         </div>
         <div className="pl-8"></div>
         <Link to="/ai">
-          <button className="text-white text-center font-bold border-white border-2 px-16 py-6 px-10  ml-4 hover:bg-white hover:text-black rounded-lg">
+          <button className="text-white text-center font-bold border-white border-2  py-6 px-16  ml-4 hover:bg-white hover:text-black rounded-lg">
             GET STARTED
           </button>
         </Link>
