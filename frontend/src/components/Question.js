@@ -7,7 +7,7 @@ export default function Question(props) {
   const [question, setQuestion] = useState(" ");
   const [index, setIndex] = useState(0);
   const [button, setButton] = useState("Start a new story");
-  const [inputVisible, setInputVisible] = useState(false); // Track input visibility
+  const [visible, setVisible] = useState(false);
 
   const questionarray = [
     "Name the protagonist?",
@@ -16,8 +16,8 @@ export default function Question(props) {
   ];
 
   function handleQuestionSubmit() {
-    if (!inputVisible) {
-      setInputVisible(true);
+    if (!visible) {
+      setVisible(true);
     }
 
     setQuestion(questionarray[index]);
@@ -42,7 +42,7 @@ export default function Question(props) {
           <AnswerBox
             text={props.text}
             setText={props.setText}
-            inputVisible={inputVisible}
+            visible={visible}
           />
         </div>
 

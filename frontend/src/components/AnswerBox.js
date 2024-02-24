@@ -7,7 +7,7 @@ export default function AnswerBox(props) {
   return (
     <div
       className={`width-256 h-auto flex flex-row justify-center items-center gap-x-4 mt-4 m-auto py-4 rounded-full bg-primary-medium ${
-        props.inputVisible ? "" : "hidden"
+        props.visible ? "" : "hidden"
       }`}
     >
       <input
