@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import "./App.css";
+import "./app.css";
 import "tailwindcss/tailwind.css";
-import Question from "./components/Question";
-import Options from "./components/Options";
-import InputBox from "./components/InputBox";
-import Prompt from "./components/Prompt";
+import Question from "../components/Question";
+import Options from "../components/Options";
+import InputBox from "../components/InputBox";
+import Prompt from "../components/Prompt";
 
 function App() {
   const [change, setChange] = useState(false);

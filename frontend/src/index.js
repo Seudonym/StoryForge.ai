@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./pages/app";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -8,33 +8,18 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Landing from './landing';
+import Landing from "./pages/landing";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Landing/>
-    ),
-    
-
-    
+    element: <Landing />,
   },
   {
-    path:"ai",
-    element:(
-      <App/>
-    )
+    path: "ai",
+    element: <App />,
   },
-  
- 
 ]);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <RouterProvider router={router} />
-);
-
-
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={router} />);
