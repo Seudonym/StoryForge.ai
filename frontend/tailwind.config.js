@@ -3,7 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        sans: ["Quicksand", "sans-serif"],
+      },
       backgroundImage: {
         mountain: "assets/background.jpg",
       },
