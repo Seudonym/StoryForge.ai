@@ -23,6 +23,22 @@ export default function InputBox(props) {
     setInput(" ");
   };
 
+  const handleImageSubmit = () => {
+    const getResponse = async () => {
+      await axios
+        .post("http://localhost:8000/api/image", { inp: input })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("There was an error!", error);
+        });
+    };
+
+    getResponse();
+    setInput(" ");
+  };
+
   return (
     <>
       <div className="flex flex-row justify-center items-center w-3/4 gap-x-4 mt-4 m-auto py-4 rounded-full bg-primary-medium">
@@ -43,7 +59,7 @@ export default function InputBox(props) {
         </button>
         <button
           className="flex items-center justify-center rounded-full bg-gray-200 w-10 h-10 hover:bg-gray-600"
-          onClick={handlePromptSubmit}
+          onClick={handleImageSubmit}
         >
           <img className="width-32" src="/assets/pic.svg" alt="Send" />
         </button>
