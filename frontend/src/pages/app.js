@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "../styles/app.css";
 import "tailwindcss/tailwind.css";
 import Question from "../components/Question";
