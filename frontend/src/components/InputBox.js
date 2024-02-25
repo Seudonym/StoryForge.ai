@@ -1,11 +1,26 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function InputBox(props) {
+  const [input, setInput] = useState(" ");
   const handleInputChange = (e) => {
-    props.setText(e.target.value);
+    setInput(e.target.value);
   };
   const handlePromptSubmit = () => {
-    props.setText(" ");
+    const getResponse = async () => {
+      console.log(props.text);
+      await axios
+        .post("http://localhost:8000/api/story", { inp: input })
+        .then((response) => {
+          props.setText(props.text + response.data);
+        })
+        .catch((error) => {
+          console.error("There was an error!", error);
+        });
+    };
+
+    getResponse();
+    setInput(" ");
   };
 
   return (
@@ -17,7 +32,7 @@ export default function InputBox(props) {
           id=""
           placeholder="Enter custom prompt"
           className="w-5/6 bg-primary-medium focus:outline-none text-white"
-          value={props.text}
+          value={input}
           onChange={handleInputChange}
         />
         <button

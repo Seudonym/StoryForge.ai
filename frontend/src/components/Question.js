@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useState } from "react";
 
 import AnswerBox from "./AnswerBox";
@@ -10,9 +11,7 @@ export default function Question(props) {
   const [visible, setVisible] = useState(false);
 
   const questionarray = [
-    "Name the protagonist?",
-    "What is the genre?",
-    "What is the tone?",
+    "Once upon a time...",
   ];
 
   function handleQuestionSubmit() {
@@ -32,6 +31,18 @@ export default function Question(props) {
         props.setChange(true);
       }
     }
+
+    const getResponse = async () => {
+      console.log(props.text)
+      await axios.post("http://localhost:8000/api/story", {inp: props.text}).then((response) => {
+        // TODO: Send to prompt.js
+        props.setText(response.data);
+      }).catch((error) => {
+        console.error("There was an error!", error);
+      });
+    };
+    
+    getResponse();
   }
 
   return (

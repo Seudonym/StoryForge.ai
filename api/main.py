@@ -1,9 +1,25 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from pydantic import BaseModel
+
 
 app = FastAPI()
+
+origins = [
+    "*",  # Allow requests from this origin
+    # Add more origins if needed
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 torch.set_default_device("cuda")
 
@@ -18,12 +34,17 @@ model.resize_token_embeddings(len(tokenizer))
 state_dict = torch.load("../model/model_state.pt")
 model.load_state_dict(state_dict)
 
+class Item(BaseModel):
+    inp: str
+
 
 @app.post('/api/story')
-async def infer(inp: str):
+async def infer(item: Item):
+    inp = item.inp
+    if not inp: return ""
     inp = "<bos>" + inp + "<bot>"
     input_ids = tokenizer.encode(inp, return_tensors='pt')
-    output = model.generate(input_ids, max_length=100, num_return_sequences=1, no_repeat_ngram_size=2)
+    output = model.generate(input_ids, max_new_tokens=100, num_return_sequences=1, no_repeat_ngram_size=2)
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 if __name__ == '__main__':

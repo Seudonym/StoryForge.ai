@@ -22,7 +22,7 @@ function App() {
         />
       ) : (
         <>
-          <Prompt />
+          <Prompt text={text} setText={setText} />
           <Options text={text} setText={setText} />
         </>
       )}
