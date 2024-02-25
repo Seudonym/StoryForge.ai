@@ -21,7 +21,7 @@ export default function Question(props) {
 
     setQuestion(questionarray[index]);
     setIndex(index + 1);
-    setButton("Next question");
+    setButton("Continue");
     props.setText("");
 
     if (index > questionarray.length - 1) {
