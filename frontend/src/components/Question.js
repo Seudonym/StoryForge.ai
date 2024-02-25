@@ -10,9 +10,7 @@ export default function Question(props) {
   const [visible, setVisible] = useState(false);
 
   const questionarray = [
-    "Name the protagonist?",
-    "What is the genre?",
-    "What is the tone?",
+    "Start your Story....",
   ];
 
   function handleQuestionSubmit() {
@@ -22,7 +20,7 @@ export default function Question(props) {
 
     setQuestion(questionarray[index]);
     setIndex(index + 1);
-    setButton("Next question");
+    setButton("Continue");
     props.setText("");
 
     if (index > questionarray.length - 1) {
@@ -32,6 +30,7 @@ export default function Question(props) {
         props.setChange(true);
       }
     }
+    
   }
 
   return (
