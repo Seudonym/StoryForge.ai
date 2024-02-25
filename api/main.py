@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from openai import OpenAI
 from pydantic import BaseModel
 
 
@@ -49,3 +50,19 @@ async def infer(item: Item):
 
 if __name__ == '__main__':
     uvicorn.run('main:app', host='localhost', port=8000, reload=True)
+
+
+client = OpenAI(api_key="")
+
+image_url = ""
+@app.post("/api/image")
+async def index(item:Item):
+    response = client.images.generate(
+            model="dall-e-2",
+            prompt = item.inp,
+            size="256x256",
+            quality = "standard",
+            n = 1,
+            )
+    image_url = response.data[0].url
+    return image_url
