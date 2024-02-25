@@ -5,8 +5,10 @@ import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from openai import OpenAI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+import os
 
-
+load_dotenv()
 app = FastAPI()
 
 origins = [
@@ -52,7 +54,7 @@ if __name__ == '__main__':
     uvicorn.run('main:app', host='localhost', port=8000, reload=True)
 
 
-client = OpenAI(api_key="")
+client = OpenAI(api_key=os.getenv("OPENAI_KEY"))
 
 image_url = ""
 @app.post("/api/image")
