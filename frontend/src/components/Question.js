@@ -33,10 +33,11 @@ export default function Question(props) {
     }
 
     const getResponse = async () => {
-      console.log(props.text)
       await axios.post("http://localhost:8000/api/story", {inp: props.text}).then((response) => {
+        response.data = response.data.replace("<bot>", "");
         // TODO: Send to prompt.js
         props.setText(response.data);
+        props.setArray([...props.array, response.data]);
       }).catch((error) => {
         console.error("There was an error!", error);
       });
@@ -54,6 +55,8 @@ export default function Question(props) {
             text={props.text}
             setText={props.setText}
             visible={visible}
+            array = {props.array}
+            setArray = {props.setArray}
           />
         </div>
 

@@ -8,11 +8,12 @@ export default function InputBox(props) {
   };
   const handlePromptSubmit = () => {
     const getResponse = async () => {
-      console.log(props.text);
       await axios
         .post("http://localhost:8000/api/story", { inp: input })
         .then((response) => {
+          response.data = response.data.replace("<bot>", "");
           props.setText(props.text + response.data);
+          props.setArray([...props.array, response.data]);
         })
         .catch((error) => {
           console.error("There was an error!", error);
@@ -28,7 +29,7 @@ export default function InputBox(props) {
       await axios
         .post("http://localhost:8000/api/image", { inp: input })
         .then((response) => {
-          console.log(response.data);
+          props.setArray([...props.array, response.data]);
         })
         .catch((error) => {
           console.error("There was an error!", error);

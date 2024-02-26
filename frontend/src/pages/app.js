@@ -9,6 +9,7 @@ import NavBar from "../components/NavBar";
 function App() {
   const [change, setChange] = useState(false);
   const [text, setText] = useState("");
+  const[array, setArray] = useState([])
 
   return (
     <main className="h-screen bg-primary-dark">
@@ -19,11 +20,13 @@ function App() {
           setText={setText}
           change={change}
           setChange={setChange}
+          array = {array}
+          setArray = {setArray}
         />
       ) : (
         <>
-          <Prompt text={text} setText={setText} />
-          <Options text={text} setText={setText} />
+          <Prompt text={text} setText={setText} array = {array} setArray = {setArray}/>
+          <Options text={text} setText={setText} array = {array} setArray = {setArray}/>
         </>
       )}
     </main>

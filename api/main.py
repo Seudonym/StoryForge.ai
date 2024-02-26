@@ -47,7 +47,7 @@ async def infer(item: Item):
     if not inp: return ""
     inp = "<bos>" + inp + "<bot>"
     input_ids = tokenizer.encode(inp, return_tensors='pt')
-    output = model.generate(input_ids, max_new_tokens=100, num_return_sequences=1, no_repeat_ngram_size=2)
+    output = model.generate(input_ids, max_new_tokens=200, num_return_sequences=1, no_repeat_ngram_size=2)
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 if __name__ == '__main__':
